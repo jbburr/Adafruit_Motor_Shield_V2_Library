@@ -152,6 +152,11 @@ void Adafruit_DCMotor::setSpeed(uint8_t speed) {
   MC->setPWM(PWMpin, speed*16);
 }
 
+void Adafruit_DCMotor::setFullSpeed() {
+  // special function to set to 100% (4096) instead of 255*16 = 4080
+  MC->setPWM(PWMpin, 4096);
+}
+
 /******************************************
                STEPPERS
 ******************************************/
